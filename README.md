@@ -1,5 +1,8 @@
 RiceTableFinal
 ==============
+Update 01/03/2014
+This is for Great Wall. Only one account.
+
 Update 01/01/2014
 Add local storage.
 document.getElementById("yourOrderLocal1").innerHTML = result.value; 
