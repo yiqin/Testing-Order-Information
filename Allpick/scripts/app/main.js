@@ -1,5 +1,5 @@
 var app = (function () {
-
+    
     var IchibanAddress = 'No address now';
     var IchibanPhone = '0000';
     
@@ -322,6 +322,11 @@ var app = (function () {
             var username = $('#loginUsername').val();
             var password = $('#loginPassword').val();
 			currentUserName = username;
+            // Only gw can login in successfully.
+            if (username != 'gw') {
+                password = '~!~!!~!';
+            }
+            
             // This didn't work. The id must be defined first.
             // getLocalStorage();
             el.Users.login(username, password)
@@ -912,8 +917,8 @@ var app = (function () {
                 }, 'You cart:', 'Ok,Cancel');   
                         
                     } // if statement
-            else if ((cartSum.length > 1 && currentTime > 23)||(cartSum.length <= 1 && currentTime > 23))  {
-                showAlert("Please order between 00:00 - 11:00");
+            else if ((cartSum.length > 1 && currentTime > 10)||(cartSum.length <= 1 && currentTime > 10))  {
+                showAlert("Please order between 00:00 - 11:00 am");
             }
             else {
                 showAlert("Your cart is empty. Please make an order.");
