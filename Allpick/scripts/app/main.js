@@ -171,9 +171,20 @@ var app = (function () {
 
         //Handle document events
         document.addEventListener("backbutton", onBackKeyDown, false);
-        if (device.platform == 'iOS' && device.version >= '7.0') {
-        		document.body.style.marginTop = "20px";
-        } 
+        
+        var deviceName = window.device.name;
+        var deviceId = window.device.uuid;
+        var deviceOs = window.device.platform;
+        var deviceOsVersion = window.device.version;
+        
+        //showAlert(deviceId);        
+        
+        // Status Bar Style
+        // Hide.
+        // 20px
+        // if (device.platform == 'iOS' && device.version >= '7.0') {
+        // 		document.body.style.marginTop = "20px";
+        // } 
         
         
         if( window.plugins.AdMob && turnOnAdd == 0 ) {
@@ -188,6 +199,7 @@ var app = (function () {
         		'publisherId' : adId,
 				'adSize' : am.AD_SIZE.BANNER,
 				'bannerAtTop' : true
+                    
         		}, 
         		function() {
         			am.requestAd({
