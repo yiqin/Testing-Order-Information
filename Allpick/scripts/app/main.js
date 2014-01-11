@@ -203,7 +203,8 @@ var app = (function () {
         		}, 
         		function() {
         			am.requestAd({
-					'isTesting' : true,
+                    // sent this value to false.
+					'isTesting' : false,
 					'extras' : {
 						'color_bg' : 'AAAAFF',
 						'color_bg_top' : 'FFFFFF',
